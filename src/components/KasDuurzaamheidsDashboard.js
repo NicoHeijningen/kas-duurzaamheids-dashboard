@@ -3,7 +3,7 @@ import {
   Flame, 
   Sun, 
   Zap, 
-  Earth,
+  CloudSun,
   LeafyGreen,
   Factory
 } from 'lucide-react';
@@ -56,7 +56,7 @@ const KasDuurzaamheidsDashboard = () => {
       prijsMwh: 60, // €/MWh
       co2UitstootMwh: 30, // kg CO2 per MWh
       kleur: '#2196F3',
-      icon: <Earth color="#2196F3" size={32} />,
+      icon: <CloudSun color="#2196F3" size={32} />,
       beschrijving: 'Duurzame aardwarmte-energie'
     },
     { 
