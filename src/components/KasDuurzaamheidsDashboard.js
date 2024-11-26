@@ -3,7 +3,7 @@ import {
   Flame, 
   Sun, 
   Zap, 
-  CloudSun,
+  Earth,
   LeafyGreen,
   Factory
 } from 'lucide-react';
@@ -56,7 +56,7 @@ const KasDuurzaamheidsDashboard = () => {
       prijsMwh: 60, // €/MWh
       co2UitstootMwh: 30, // kg CO2 per MWh
       kleur: '#2196F3',
-      icon: <CloudSun color="#2196F3" size={32} />,
+      icon: <Earth color="#2196F3" size={32} />,
       beschrijving: 'Duurzame aardwarmte-energie'
     },
     { 
@@ -159,7 +159,7 @@ const KasDuurzaamheidsDashboard = () => {
                 <Legend 
                   formatter={(value) => {
                     const bron = energieBronnen.find(b => b.naam === value);
-                    return bron ? `${value} (${bron.percentage}%)` : value;
+                    return bron ? `${value} (${bron.naam}%)` : value;
                   }}
                 />
               </PieChart>

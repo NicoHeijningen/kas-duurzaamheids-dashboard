@@ -1,5 +1,6 @@
 {
   "name": "kas-duurzaamheids-dashboard",
+  "homepage": "https://nicoheijningen.github.io/kas-duurzaamheids-dashboard",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
