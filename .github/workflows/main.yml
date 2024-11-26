@@ -4,8 +4,12 @@ on:
   pull_request:
     branches: [ "master" ]
 
+
+
 jobs:
   build:
+    permissions:
+      pages: write
 
     runs-on: ubuntu-latest
     
