@@ -129,7 +129,7 @@ const KasDuurzaamheidsDashboard = () => {
           <div key={source.name} className="bg-white p-4 rounded-lg shadow-sm">
             <div className="flex items-center gap-4 mb-4">
               {source.icon}
-              <h4 className="font-semibold">{source.name}</h4>
+              <h4 className="font-semibold"> {source.name}</h4>
             </div>
             <div className="space-y-4">
               <div>
