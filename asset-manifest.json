@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kas-duurzaamheids-dashboard/static/css/main.aa5a4b06.css",
+    "main.js": "/kas-duurzaamheids-dashboard/static/js/main.c5d455e0.js",
+    "index.html": "/kas-duurzaamheids-dashboard/index.html",
+    "main.aa5a4b06.css.map": "/kas-duurzaamheids-dashboard/static/css/main.aa5a4b06.css.map",
+    "main.c5d455e0.js.map": "/kas-duurzaamheids-dashboard/static/js/main.c5d455e0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa5a4b06.css",
+    "static/js/main.c5d455e0.js"
+  ]
+}
