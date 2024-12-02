@@ -48,30 +48,31 @@ const VPDChart = () => {
   const handleMouseDown = () => setIsDragging(true);
   const handleMouseUp = () => setIsDragging(false);
   
-  const handleMouseMove = (e) => {
-    if (!isDragging || !chartRef.current) return;
-    const rect = chartRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - 32;
-    const y = e.clientY - rect.top - 32;
-    const chartWidth = rect.width - 64;
-    const chartHeight = rect.height - 64;
-    let newRH = 100 - (x / chartWidth * 100);
-    let newTemp = (y / chartHeight * 40);
-    newRH = Math.max(0, Math.min(100, newRH));
-    newTemp = Math.max(0, Math.min(40, newTemp));
-    setAirRH(Math.round(newRH));
-    setAirTemp(Math.round(newTemp));
-  };
-
   useEffect(() => {
     if (isDragging) {
+      const handleMouseMove = (e) => {
+        if (!isDragging || !chartRef.current) return;
+        const rect = chartRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left - 32;
+        const y = e.clientY - rect.top - 32;
+        const chartWidth = rect.width - 64;
+        const chartHeight = rect.height - 64;
+        let newRH = 100 - (x / chartWidth * 100);
+        let newTemp = (y / chartHeight * 40);
+        newRH = Math.max(0, Math.min(100, newRH));
+        newTemp = Math.max(0, Math.min(40, newTemp));
+        setAirRH(Math.round(newRH));
+        setAirTemp(Math.round(newTemp));
+      };
+  
       window.addEventListener('mouseup', handleMouseUp);
       window.addEventListener('mousemove', handleMouseMove);
+  
+      return () => {
+        window.removeEventListener('mouseup', handleMouseUp);
+        window.removeEventListener('mousemove', handleMouseMove);
+      };
     }
-    return () => {
-      window.removeEventListener('mouseup', handleMouseUp);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
   }, [isDragging]);
 
   const vpd = calculateVPD(airTemp, leafTemp, airRH);
